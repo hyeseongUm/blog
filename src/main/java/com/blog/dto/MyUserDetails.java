@@ -1,4 +1,4 @@
-package com.blog;
+package com.blog.dto;
 
 import com.blog.entity.UserEntity;
 import org.springframework.security.core.GrantedAuthority;

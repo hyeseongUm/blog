@@ -1,5 +1,6 @@
 package com.blog.controller;
 
+import com.blog.dto.JoinDTO;
 import com.blog.entity.UserEntity;
 import com.blog.service.JoinService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +16,13 @@ public class JoinController {
 
     @GetMapping("/join")
     public String join(){
-        return "join.html";
+        return "user/join.html";
     }
 
     @PostMapping("/join")
-    public String joinReg(UserEntity userEntity){
+    public String joinReg(JoinDTO joinDTO){
 
-        joinService.joinPros(userEntity);
+        joinService.joinPros(joinDTO);
         // validator 해서 빈칸 이런거 확인하기
 
         return "redirect:/login";

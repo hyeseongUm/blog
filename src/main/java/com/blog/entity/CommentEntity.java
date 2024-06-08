@@ -13,9 +13,11 @@ public class CommentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int no;
 
-    @Column(unique = true)
-    private String nickname;
+    // user 의 회원 번호 외래키
+    private int userNo;
 
-    private String comment;
+    // cate 번호 외래키
+    private int cateNo;
+    private String contents;
     private Date regDate;
 }

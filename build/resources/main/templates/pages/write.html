@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>글쓰기</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.css" />
+</head>
+<body class="is-preload">
+<form method="post" action="write">
+    <div class="row gtr-uniform">
+        <div class="col-12">
+            <input type="text" name="demo-name" id="demo-name" value="" placeholder="Title" />
+        </div>
+        <div class="col-6">
+            <select name="demo-category" id="demo-category">
+                <option value="">- Category -</option>
+                <option value="1">카테1</option>
+                <option value="1">서브1</option>
+                <option value="1">카테2</option>
+            </select>
+        </div>
+
+        <div id="editor"></div>
+
+        <div class="col-12">
+            <ul class="actions">
+                <li><input type="submit" value="등록" class="primary" /></li>
+                <li><input type="reset" value="취소" /></li>
+            </ul>
+        </div>
+    </div>
+</form>
+
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+<script>
+    const editor = new toastui.Editor({
+        el: document.querySelector('#editor'),
+        previewStyle: 'vertical',
+        height: '500px',
+        initialValue: '입력값 db에 얺기'
+         });
+</script>
+</body>
+</html>

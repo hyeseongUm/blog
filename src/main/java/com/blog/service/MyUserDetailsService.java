@@ -1,6 +1,6 @@
 package com.blog.service;
 
-import com.blog.MyUserDetails;
+import com.blog.dto.MyUserDetails;
 import com.blog.entity.UserEntity;
 import com.blog.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
