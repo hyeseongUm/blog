@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>카테고리 리스트/추가/수정/삭제</title>
+</head>
+<body>
+    <form action="/category" method="post">
+        <input type="text" value="카테고리 추가" onclick="addCate()" readonly/>
+        <div>
+            <input type="text" name="cateName">
+            <input type="button" value="추가" onclick="addSubCate(this)">
+            <input type="button" value="수정" onclick="editCate(this)">
+            <input type="button" value="수정" onclick="deleteCate(this)">
+        </div>
+        <input type="submit" value="저장">
+    </form>
+    <script th:inline="javascript">
+
+    </script>
+</body>
+</html>

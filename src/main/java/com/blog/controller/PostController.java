@@ -1,21 +1,23 @@
 package com.blog.controller;
 
-import com.blog.entity.PostEntity;
+import com.blog.entity.Post;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/posts")
 public class PostController {
 
     @GetMapping("")
-    public String list(PostEntity postEntity, Model model){
+    public String list(Post postEntity, Model model){
         return "pages/list.html";
     }
 
     @GetMapping("{no}")
-    public String detail(PostEntity postEntity, Model model){
+    public String detail(Post postEntity, Model model){
         return "pages/detail.html";
     }
 
@@ -25,7 +27,7 @@ public class PostController {
     }
 
     @PostMapping("write")
-    public String writePost(PostEntity postEntity){
+    public String writePost(Post postEntity){
         return "redirect:/"; //디테일 페이지? 아니면 리스트 페이지?
     }
 

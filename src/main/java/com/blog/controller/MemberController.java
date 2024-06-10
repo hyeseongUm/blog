@@ -1,18 +1,18 @@
 package com.blog.controller;
 
-import com.blog.dto.JoinDTO;
-import com.blog.entity.UserEntity;
-import com.blog.service.JoinService;
+import com.blog.dto.MemberDTO;
+import com.blog.service.MemberService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class JoinController {
+@RequiredArgsConstructor
+public class MemberController {
 
-    @Autowired
-    private JoinService joinService;
+    private final MemberService joinService;
 
     @GetMapping("/join")
     public String join(){
@@ -20,11 +20,15 @@ public class JoinController {
     }
 
     @PostMapping("/join")
-    public String joinReg(JoinDTO joinDTO){
-
-        joinService.joinPros(joinDTO);
+    public String joinMember(MemberDTO joinDTO){
+        joinService.join(joinDTO);
         // validator 해서 빈칸 이런거 확인하기
 
         return "redirect:/login";
+    }
+
+    @GetMapping("/login")
+    public String login(){
+        return "user/login.html";
     }
 }

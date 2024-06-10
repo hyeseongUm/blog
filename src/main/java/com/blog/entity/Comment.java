@@ -6,18 +6,17 @@ import jakarta.persistence.Id;
 
 import java.util.Date;
 
-public class PostEntity {
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int no;
+    private Long no;
 
-    // 관리자 권한 no 외래키
+    // user 의 회원 번호 외래키
     private int userNo;
-    // cate 번호 외래키
-    private int CateNumber;
 
-    private String title;
+    // cate 번호 외래키
+    private int cateNo;
     private String contents;
     private Date regDate;
 }

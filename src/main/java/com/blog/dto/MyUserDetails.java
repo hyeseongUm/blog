@@ -1,6 +1,6 @@
 package com.blog.dto;
 
-import com.blog.entity.UserEntity;
+import com.blog.entity.Member;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -9,9 +9,9 @@ import java.util.Collection;
 
 public class MyUserDetails implements UserDetails {
 
-    private final UserEntity userEntity;
+    private final Member userEntity;
 
-    public MyUserDetails(UserEntity userEntity){
+    public MyUserDetails(Member userEntity){
         this.userEntity = userEntity;
     }
 
