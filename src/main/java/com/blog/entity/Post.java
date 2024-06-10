@@ -4,14 +4,18 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
+@Setter
+@Getter
 public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long no;
+    private Long id;
 
     // 관리자 권한 no 외래키
     @Column
@@ -19,7 +23,7 @@ public class Post {
 
     // cate 번호 외래키
     @Column
-    private int CateNumber;
+    private Long cateNumber;
 
     @Column(nullable = false)
     private String title;
